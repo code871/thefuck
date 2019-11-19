@@ -182,6 +182,7 @@ following rules are enabled by default:
 * `cd_mkdir` &ndash; creates directories before cd'ing into them;
 * `cd_parent` &ndash; changes `cd..` to `cd ..`;
 * `chmod_x` &ndash; add execution bit;
+* `choco_install` &ndash; append common suffixes for chocolatey packages;
 * `composer_not_command` &ndash; fixes composer command name;
 * `cp_omitting_directory` &ndash; adds `-a` when you `cp` directory;
 * `cpp11` &ndash; adds missing `-std=c++11` to `g++` or `clang++`;
@@ -228,7 +229,7 @@ following rules are enabled by default:
 * `git_rm_recursive` &ndash; adds `-r` when you try to `rm` a directory;
 * `git_rm_staged` &ndash;  adds `-f` or `--cached` when you try to `rm` a file with staged changes
 * `git_rebase_merge_dir` &ndash; offers `git rebase (--continue | --abort | --skip)` or removing the `.git/rebase-merge` dir when a rebase is in progress;
-* `git_remote_seturl_add` &ndash; runs `git remote add` when `git remote set_url` on nonexistant remote;
+* `git_remote_seturl_add` &ndash; runs `git remote add` when `git remote set_url` on nonexistent remote;
 * `git_stash` &ndash; stashes your local modifications before rebasing or switching branch;
 * `git_stash_pop` &ndash; adds your local modifications before popping stash, then resets;
 * `git_tag_force` &ndash; adds `--force` to `git tag <tagname>` when the tag already exists;
@@ -261,7 +262,7 @@ following rules are enabled by default:
 * `missing_space_before_subcommand` &ndash; fixes command with missing space like `npminstall`;
 * `mkdir_p` &ndash; adds `-p` when you try to create a directory without parent;
 * `mvn_no_command` &ndash; adds `clean package` to `mvn`;
-* `mvn_unknown_lifecycle_phase` &ndash; fixes misspelled lifecycle phases with `mvn`;
+* `mvn_unknown_lifecycle_phase` &ndash; fixes misspelled life cycle phases with `mvn`;
 * `npm_missing_script` &ndash; fixes `npm` custom script name in `npm run-script <script>`;
 * `npm_run_script` &ndash; adds missing `run-script` for custom `npm` scripts;
 * `npm_wrong_command` &ndash; fixes wrong npm commands like `npm urgrade`;
@@ -279,7 +280,8 @@ following rules are enabled by default:
 * `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args';
 * `path_from_history` &ndash; replaces not found path with similar absolute path from history;
 * `react_native_command_unrecognized` &ndash; fixes unrecognized `react-native` commands;
-* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+* `remove_shell_prompt_literal` &ndash; remove leading shell prompt symbol `$`, common when copying commands from documentations;
+* `remove_trailing_cedilla` &ndash; remove trailing cedillas `ç`, a common typo for european keyboard layouts;
 * `rm_dir` &ndash; adds `-rf` when you try to remove a directory;
 * `scm_correction` &ndash; corrects wrong scm like `hg log` to `git log`;
 * `sed_unterminated_s` &ndash; adds missing '/' to `sed`'s `s` commands;
@@ -389,7 +391,7 @@ requires_output = True
 Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/thefuck/settings.py`
 (`$XDG_CONFIG_HOME` defaults to `~/.config`):
 
-* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT_RULES`;
+* `rules` &ndash; list of enabled rules, by default `thefuck.const.DEFAULT_RULES`;
 * `exclude_rules` &ndash; list of disabled rules, by default `[]`;
 * `require_confirmation` &ndash; requires confirmation before running new command, by default `True`;
 * `wait_command` &ndash; max amount of time in seconds for getting previous command output;
